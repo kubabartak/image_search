@@ -15,7 +15,7 @@ app.use(express.static(__dirname + '/public'));
 
 // connect to db 
 
-var mongodbUri= 'mongodb://testowy:test@ds157809.mlab.com:57809/image_search';
+var mongodbUri= process.env.MONGODB_URI;
 const mongoose = require('mongoose');
  
 const options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }, 
