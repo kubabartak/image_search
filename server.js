@@ -23,7 +23,7 @@ const options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS
  
 // uncomment fo heroku var mongodbUri = process.env.MONGODB_URI;
  
-mongoose.connect(mongodbUri, options);
+mongoose.connect(mongodbUri || 'localhost:27017/', options);
 var conn = mongoose.connection;             
  
 conn.on('error', console.error.bind(console, 'connection error:'));  
